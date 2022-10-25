@@ -95,12 +95,7 @@ public class TutorialService implements ITutorial {
 
     @Override
     public List<Tutorial> getPublished() {
-        List<Tutorial> tutorials = this.repo.findAll();
-        List<Tutorial> publishedTutorials =  tutorials.stream()
-                .filter(tutorial -> tutorial.getStatus() == Status.PUBLISHED)
-                .collect(Collectors.toList());
-
-        return publishedTutorials;
+        return this.repo.findPublished();
     }
 
     @Override

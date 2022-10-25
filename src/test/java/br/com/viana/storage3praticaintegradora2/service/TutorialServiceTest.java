@@ -117,8 +117,8 @@ public class TutorialServiceTest {
 
     @Test
     public void getPublished_returnPublishedTutorials(){
-        Mockito.when(this.repo.findAll())
-                .thenReturn(this.tutorials);
+        Mockito.when(this.repo.findPublished())
+                .thenReturn(this.filteredTutorial);
 
         List<Tutorial> response = this.service.getPublished();
 
